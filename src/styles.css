@@ -1,0 +1,38 @@
+:root { --bg:#f4f6fa; --panel:#fff; --ink:#1b2430; --muted:#6b7686; --line:#e1e6ee; --blue:#2563eb; --side:#0f1b2d; --warn:#b45309; --ok:#15803d; --err:#b91c1c; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --panel:#111a2b; --ink:#e6ebf3; --muted:#93a1b5; --line:#22304a; --side:#070d18; } }
+* { box-sizing: border-box; }
+body { margin:0; font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--ink); }
+a { color:var(--blue); }
+h1 { font-size:1.5rem; margin:.2rem 0 1rem; } h2 { font-size:1.05rem; margin:.2rem 0 .8rem; }
+.shell { display:flex; min-height:100vh; }
+.side { width:220px; background:var(--side); color:#cfd8e6; padding:16px; display:flex; flex-direction:column; gap:20px; flex-shrink:0; }
+.brand { font-weight:700; color:#fff; font-size:1.05rem; }
+.side nav { display:flex; flex-direction:column; gap:4px; flex:1; }
+.side nav a { color:#cfd8e6; text-decoration:none; padding:9px 12px; border-radius:8px; }
+.side nav a.active { background:var(--blue); color:#fff; }
+.who small { display:block; color:#8fa0b8; margin-bottom:8px; }
+.main { flex:1; padding:24px; min-width:0; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:12px; margin-bottom:16px; }
+.pad { padding:16px; }
+.btn { background:var(--blue); color:#fff; border:0; border-radius:8px; padding:9px 16px; font:inherit; cursor:pointer; }
+.btn:disabled { opacity:.5; cursor:not-allowed; } .btn-ghost { background:transparent; color:inherit; border:1px solid var(--line); }
+.link { background:none; border:0; color:var(--blue); cursor:pointer; font:inherit; padding:0; }
+input, select, textarea { font:inherit; color:inherit; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:8px 10px; width:100%; }
+label { display:block; margin-bottom:12px; font-size:.9rem; color:var(--muted); } label > * { margin-top:4px; color:var(--ink); }
+.toolbar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; } .toolbar .search { flex:1; min-width:220px; } .toolbar select { width:auto; }
+.table-wrap { overflow:auto; } table { width:100%; border-collapse:collapse; }
+th, td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:top; } th { font-size:.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:.03em; }
+.small { font-size:.8rem; color:var(--muted); }
+.badge { display:inline-block; padding:2px 8px; border-radius:99px; font-size:.75rem; background:var(--line); margin-left:6px; }
+.b-ativo { background:#dcfce7; color:#166534; } .b-desconectado,.b-inativo { background:#fee2e2; color:#991b1b; } .b-a_validar,.b-warn { background:#fef3c7; color:#92400e; }
+.state { padding:28px; text-align:center; } .muted { color:var(--muted); }
+.spin { display:inline-block; width:14px; height:14px; border:2px solid var(--line); border-top-color:var(--blue); border-radius:50%; animation:r .8s linear infinite; margin-right:8px; vertical-align:-2px; }
+@keyframes r { to { transform:rotate(360deg); } }
+.alert { padding:10px 14px; border-radius:8px; margin:10px 0; } .alert-err { background:#fee2e2; color:#991b1b; } .alert-ok { background:#dcfce7; color:#166534; } .alert-warn { background:#fef3c7; color:#92400e; }
+.pager { display:flex; gap:14px; align-items:center; justify-content:center; margin:12px 0; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; } .grid .card { margin-bottom:0; } .grid { margin-bottom:16px; }
+dl { display:grid; grid-template-columns:150px 1fr; gap:6px 12px; margin:0; } dt { color:var(--muted); } dd { margin:0; word-break:break-word; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:16px 0; } .stat { padding:14px; margin:0; } .stat b { display:block; font-size:1.5rem; } .stat span { color:var(--muted); font-size:.8rem; }
+ul.plain { margin:0; padding-left:18px; }
+.login { min-height:100vh; display:grid; place-items:center; padding:16px; } .login-card { width:100%; max-width:380px; padding:24px; margin:0; } .login-card .btn { width:100%; margin-bottom:8px; }
+@media (max-width:760px) { .shell { flex-direction:column; } .side { width:auto; flex-direction:row; align-items:center; flex-wrap:wrap; gap:10px; } .side nav { flex-direction:row; flex:1; } .who { display:flex; gap:10px; align-items:center; } .main { padding:14px; } dl { grid-template-columns:1fr; } }
